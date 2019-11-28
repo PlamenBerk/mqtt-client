@@ -17,6 +17,7 @@ import com.example.mqtt.mqtt_client.MainActivity;
 import com.example.mqtt.mqtt_client.R;
 
 import org.eclipse.paho.client.mqttv3.MqttException;
+import org.eclipse.paho.client.mqttv3.MqttMessage;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -27,7 +28,7 @@ import static android.app.Activity.RESULT_OK;
 public class TabFragmentA1 extends Fragment {
 
     private ImageButton powerButton, volumeUpButton, volumeDownButton, channelUpButton, channelDownButton, muteButton, homeButton, backwardButton, forwardButton, playPauseButton, stopButton, speakButton, backButton, appButton, okButton,
-    upButton, downButton, leftButton, rightButton;
+            upButton, downButton, leftButton, rightButton;
     private MainActivity mainActivity;
 
     @Override
@@ -70,15 +71,11 @@ public class TabFragmentA1 extends Fragment {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                String message = Constants.A1_POWER_BUTTON;
-                if (!message.isEmpty()) {
-                    try {
-                        mainActivity.pahoMqttClient.publishMessage(mainActivity.client, message, 1, Constants.PUBLISH_TOPIC);
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
+                MqttMessage message = new MqttMessage(Constants.A1_POWER_BUTTON.getBytes());
+                try {
+                    mainActivity.client.publish(Constants.PUBLISH_TOPIC, message);
+                } catch (MqttException e) {
+                    e.printStackTrace();
                 }
             }
         });
@@ -87,15 +84,11 @@ public class TabFragmentA1 extends Fragment {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                String message = Constants.A1_VOLUME_UP_BUTTON;
-                if (!message.isEmpty()) {
-                    try {
-                        mainActivity.pahoMqttClient.publishMessage(mainActivity.client, message, 1, Constants.PUBLISH_TOPIC);
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
+                MqttMessage message = new MqttMessage(Constants.A1_VOLUME_UP_BUTTON.getBytes());
+                try {
+                    mainActivity.client.publish(Constants.PUBLISH_TOPIC, message);
+                } catch (MqttException e) {
+                    e.printStackTrace();
                 }
             }
         });
@@ -104,15 +97,11 @@ public class TabFragmentA1 extends Fragment {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                String message = Constants.A1_VOLUME_DOWN_BUTTON;
-                if (!message.isEmpty()) {
-                    try {
-                        mainActivity.pahoMqttClient.publishMessage(mainActivity.client, message, 1, Constants.PUBLISH_TOPIC);
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
+                MqttMessage message = new MqttMessage(Constants.A1_VOLUME_DOWN_BUTTON.getBytes());
+                try {
+                    mainActivity.client.publish(Constants.PUBLISH_TOPIC, message);
+                } catch (MqttException e) {
+                    e.printStackTrace();
                 }
             }
         });
@@ -121,15 +110,11 @@ public class TabFragmentA1 extends Fragment {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                String message = Constants.A1_CHANNEL_UP_BUTTON;
-                if (!message.isEmpty()) {
-                    try {
-                        mainActivity.pahoMqttClient.publishMessage(mainActivity.client, message, 1, Constants.PUBLISH_TOPIC);
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
+                MqttMessage message = new MqttMessage(Constants.A1_CHANNEL_UP_BUTTON.getBytes());
+                try {
+                    mainActivity.client.publish(Constants.PUBLISH_TOPIC, message);
+                } catch (MqttException e) {
+                    e.printStackTrace();
                 }
             }
         });
@@ -138,15 +123,11 @@ public class TabFragmentA1 extends Fragment {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                String message = Constants.A1_CHANNEL_DOWN_BUTTON;
-                if (!message.isEmpty()) {
-                    try {
-                        mainActivity.pahoMqttClient.publishMessage(mainActivity.client, message, 1, Constants.PUBLISH_TOPIC);
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
+                MqttMessage message = new MqttMessage(Constants.A1_CHANNEL_DOWN_BUTTON.getBytes());
+                try {
+                    mainActivity.client.publish(Constants.PUBLISH_TOPIC, message);
+                } catch (MqttException e) {
+                    e.printStackTrace();
                 }
             }
         });
@@ -155,15 +136,11 @@ public class TabFragmentA1 extends Fragment {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                String message = Constants.A1_MUTE_BUTTON;
-                if (!message.isEmpty()) {
-                    try {
-                        mainActivity.pahoMqttClient.publishMessage(mainActivity.client, message, 1, Constants.PUBLISH_TOPIC);
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
+                MqttMessage message = new MqttMessage(Constants.A1_MUTE_BUTTON.getBytes());
+                try {
+                    mainActivity.client.publish(Constants.PUBLISH_TOPIC, message);
+                } catch (MqttException e) {
+                    e.printStackTrace();
                 }
             }
         });
@@ -172,15 +149,11 @@ public class TabFragmentA1 extends Fragment {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                String message = Constants.A1_HOME_BUTTON;
-                if (!message.isEmpty()) {
-                    try {
-                        mainActivity.pahoMqttClient.publishMessage(mainActivity.client, message, 1, Constants.PUBLISH_TOPIC);
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
+                MqttMessage message = new MqttMessage(Constants.A1_HOME_BUTTON.getBytes());
+                try {
+                    mainActivity.client.publish(Constants.PUBLISH_TOPIC, message);
+                } catch (MqttException e) {
+                    e.printStackTrace();
                 }
             }
         });
@@ -189,15 +162,11 @@ public class TabFragmentA1 extends Fragment {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                String message = Constants.A1_BACKWARD_BUTTON;
-                if (!message.isEmpty()) {
-                    try {
-                        mainActivity.pahoMqttClient.publishMessage(mainActivity.client, message, 1, Constants.PUBLISH_TOPIC);
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
+                MqttMessage message = new MqttMessage(Constants.A1_BACKWARD_BUTTON.getBytes());
+                try {
+                    mainActivity.client.publish(Constants.PUBLISH_TOPIC, message);
+                } catch (MqttException e) {
+                    e.printStackTrace();
                 }
             }
         });
@@ -206,15 +175,11 @@ public class TabFragmentA1 extends Fragment {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                String message = Constants.A1_FORWARD_BUTTON;
-                if (!message.isEmpty()) {
-                    try {
-                        mainActivity.pahoMqttClient.publishMessage(mainActivity.client, message, 1, Constants.PUBLISH_TOPIC);
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
+                MqttMessage message = new MqttMessage(Constants.A1_FORWARD_BUTTON.getBytes());
+                try {
+                    mainActivity.client.publish(Constants.PUBLISH_TOPIC, message);
+                } catch (MqttException e) {
+                    e.printStackTrace();
                 }
             }
         });
@@ -223,15 +188,11 @@ public class TabFragmentA1 extends Fragment {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                String message = Constants.A1_PLAY_PAUSE_BUTTON;
-                if (!message.isEmpty()) {
-                    try {
-                        mainActivity.pahoMqttClient.publishMessage(mainActivity.client, message, 1, Constants.PUBLISH_TOPIC);
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
+                MqttMessage message = new MqttMessage(Constants.A1_PLAY_PAUSE_BUTTON.getBytes());
+                try {
+                    mainActivity.client.publish(Constants.PUBLISH_TOPIC, message);
+                } catch (MqttException e) {
+                    e.printStackTrace();
                 }
             }
         });
@@ -240,15 +201,11 @@ public class TabFragmentA1 extends Fragment {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                String message = Constants.A1_STOP_BUTTON;
-                if (!message.isEmpty()) {
-                    try {
-                        mainActivity.pahoMqttClient.publishMessage(mainActivity.client, message, 1, Constants.PUBLISH_TOPIC);
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
+                MqttMessage message = new MqttMessage(Constants.A1_STOP_BUTTON.getBytes());
+                try {
+                    mainActivity.client.publish(Constants.PUBLISH_TOPIC, message);
+                } catch (MqttException e) {
+                    e.printStackTrace();
                 }
             }
         });
@@ -276,15 +233,11 @@ public class TabFragmentA1 extends Fragment {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                String message = Constants.A1_BACK_BUTTON;
-                if (!message.isEmpty()) {
-                    try {
-                        mainActivity.pahoMqttClient.publishMessage(mainActivity.client, message, 1, Constants.PUBLISH_TOPIC);
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
+                MqttMessage message = new MqttMessage(Constants.A1_BACK_BUTTON.getBytes());
+                try {
+                    mainActivity.client.publish(Constants.PUBLISH_TOPIC, message);
+                } catch (MqttException e) {
+                    e.printStackTrace();
                 }
             }
         });
@@ -293,15 +246,11 @@ public class TabFragmentA1 extends Fragment {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                String message = Constants.A1_APP_BUTTON;
-                if (!message.isEmpty()) {
-                    try {
-                        mainActivity.pahoMqttClient.publishMessage(mainActivity.client, message, 1, Constants.PUBLISH_TOPIC);
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
+                MqttMessage message = new MqttMessage(Constants.A1_APP_BUTTON.getBytes());
+                try {
+                    mainActivity.client.publish(Constants.PUBLISH_TOPIC, message);
+                } catch (MqttException e) {
+                    e.printStackTrace();
                 }
             }
         });
@@ -310,15 +259,11 @@ public class TabFragmentA1 extends Fragment {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                String message = Constants.A1_OK_BUTTON;
-                if (!message.isEmpty()) {
-                    try {
-                        mainActivity.pahoMqttClient.publishMessage(mainActivity.client, message, 1, Constants.PUBLISH_TOPIC);
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
+                MqttMessage message = new MqttMessage(Constants.A1_OK_BUTTON.getBytes());
+                try {
+                    mainActivity.client.publish(Constants.PUBLISH_TOPIC, message);
+                } catch (MqttException e) {
+                    e.printStackTrace();
                 }
             }
         });
@@ -327,15 +272,11 @@ public class TabFragmentA1 extends Fragment {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                String message = Constants.A1_UP_BUTTON;
-                if (!message.isEmpty()) {
-                    try {
-                        mainActivity.pahoMqttClient.publishMessage(mainActivity.client, message, 1, Constants.PUBLISH_TOPIC);
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
+                MqttMessage message = new MqttMessage(Constants.A1_UP_BUTTON.getBytes());
+                try {
+                    mainActivity.client.publish(Constants.PUBLISH_TOPIC, message);
+                } catch (MqttException e) {
+                    e.printStackTrace();
                 }
             }
         });
@@ -344,15 +285,11 @@ public class TabFragmentA1 extends Fragment {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                String message = Constants.A1_DOWN_BUTTON;
-                if (!message.isEmpty()) {
-                    try {
-                        mainActivity.pahoMqttClient.publishMessage(mainActivity.client, message, 1, Constants.PUBLISH_TOPIC);
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
+                MqttMessage message = new MqttMessage(Constants.A1_DOWN_BUTTON.getBytes());
+                try {
+                    mainActivity.client.publish(Constants.PUBLISH_TOPIC, message);
+                } catch (MqttException e) {
+                    e.printStackTrace();
                 }
             }
         });
@@ -361,15 +298,11 @@ public class TabFragmentA1 extends Fragment {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                String message = Constants.A1_LEFT_BUTTON;
-                if (!message.isEmpty()) {
-                    try {
-                        mainActivity.pahoMqttClient.publishMessage(mainActivity.client, message, 1, Constants.PUBLISH_TOPIC);
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
+                MqttMessage message = new MqttMessage(Constants.A1_LEFT_BUTTON.getBytes());
+                try {
+                    mainActivity.client.publish(Constants.PUBLISH_TOPIC, message);
+                } catch (MqttException e) {
+                    e.printStackTrace();
                 }
             }
         });
@@ -378,15 +311,11 @@ public class TabFragmentA1 extends Fragment {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                String message = Constants.A1_RIGHT_BUTTON;
-                if (!message.isEmpty()) {
-                    try {
-                        mainActivity.pahoMqttClient.publishMessage(mainActivity.client, message, 1, Constants.PUBLISH_TOPIC);
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
+                MqttMessage message = new MqttMessage(Constants.A1_RIGHT_BUTTON.getBytes());
+                try {
+                    mainActivity.client.publish(Constants.PUBLISH_TOPIC, message);
+                } catch (MqttException e) {
+                    e.printStackTrace();
                 }
             }
         });
@@ -399,11 +328,10 @@ public class TabFragmentA1 extends Fragment {
                 if (resultCode == RESULT_OK && null != data) {
                     ArrayList result = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                    MqttMessage message = new MqttMessage(String.valueOf(getNumberFromResult(result)).getBytes());
                     try {
-                        mainActivity.pahoMqttClient.publishMessage(mainActivity.client, String.valueOf(getNumberFromResult(result)), 1, Constants.PUBLISH_TOPIC);
+                        mainActivity.client.publish(Constants.PUBLISH_TOPIC, message);
                     } catch (MqttException e) {
-                        e.printStackTrace();
-                    } catch (UnsupportedEncodingException e) {
                         e.printStackTrace();
                     }
                 }

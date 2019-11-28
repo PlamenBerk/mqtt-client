@@ -16,6 +16,7 @@ import com.example.mqtt.mqtt_client.MainActivity;
 import com.example.mqtt.mqtt_client.R;
 
 import org.eclipse.paho.client.mqttv3.MqttException;
+import org.eclipse.paho.client.mqttv3.MqttMessage;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -26,7 +27,7 @@ import static android.app.Activity.RESULT_OK;
 public class TabFragmentTvF extends Fragment {
 
     private ImageButton powerButton, muteButton, inputButton, volumeUpButton, volumeDownButton, channelUpButton, channelDownButton,
-             backButton, exitButton, okButton, upButton, downButton, leftButton, rightButton;
+            backButton, exitButton, okButton, upButton, downButton, leftButton, rightButton;
 
     private MainActivity mainActivity;
 
@@ -60,15 +61,11 @@ public class TabFragmentTvF extends Fragment {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                String message = Constants.FINLUX_POWER_BUTTON;
-                if (!message.isEmpty()) {
-                    try {
-                        mainActivity.pahoMqttClient.publishMessage(mainActivity.client, message, 1, Constants.PUBLISH_TOPIC_FINLUX);
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
+                MqttMessage message = new MqttMessage(Constants.FINLUX_POWER_BUTTON.getBytes());
+                try {
+                    mainActivity.client.publish(Constants.PUBLISH_TOPIC_FINLUX, message);
+                } catch (MqttException e) {
+                    e.printStackTrace();
                 }
             }
         });
@@ -77,15 +74,11 @@ public class TabFragmentTvF extends Fragment {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                String message = Constants.FINLUX_VOLUME_UP_BUTTON;
-                if (!message.isEmpty()) {
-                    try {
-                        mainActivity.pahoMqttClient.publishMessage(mainActivity.client, message, 1, Constants.PUBLISH_TOPIC_FINLUX);
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
+                MqttMessage message = new MqttMessage(Constants.FINLUX_VOLUME_UP_BUTTON.getBytes());
+                try {
+                    mainActivity.client.publish(Constants.PUBLISH_TOPIC_FINLUX, message);
+                } catch (MqttException e) {
+                    e.printStackTrace();
                 }
             }
         });
@@ -94,15 +87,11 @@ public class TabFragmentTvF extends Fragment {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                String message = Constants.FINLUX_VOLUME_DOWN_BUTTON;
-                if (!message.isEmpty()) {
-                    try {
-                        mainActivity.pahoMqttClient.publishMessage(mainActivity.client, message, 1, Constants.PUBLISH_TOPIC_FINLUX);
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
+                MqttMessage message = new MqttMessage(Constants.FINLUX_VOLUME_DOWN_BUTTON.getBytes());
+                try {
+                    mainActivity.client.publish(Constants.PUBLISH_TOPIC_FINLUX, message);
+                } catch (MqttException e) {
+                    e.printStackTrace();
                 }
             }
         });
@@ -111,15 +100,11 @@ public class TabFragmentTvF extends Fragment {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                String message = Constants.FINLUX_CHANNEL_UP_BUTTON;
-                if (!message.isEmpty()) {
-                    try {
-                        mainActivity.pahoMqttClient.publishMessage(mainActivity.client, message, 1, Constants.PUBLISH_TOPIC_FINLUX);
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
+                MqttMessage message = new MqttMessage(Constants.FINLUX_CHANNEL_UP_BUTTON.getBytes());
+                try {
+                    mainActivity.client.publish(Constants.PUBLISH_TOPIC_FINLUX, message);
+                } catch (MqttException e) {
+                    e.printStackTrace();
                 }
             }
         });
@@ -128,15 +113,11 @@ public class TabFragmentTvF extends Fragment {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                String message = Constants.FINLUX_CHANNEL_DOWN_BUTTON;
-                if (!message.isEmpty()) {
-                    try {
-                        mainActivity.pahoMqttClient.publishMessage(mainActivity.client, message, 1, Constants.PUBLISH_TOPIC_FINLUX);
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
+                MqttMessage message = new MqttMessage(Constants.FINLUX_CHANNEL_DOWN_BUTTON.getBytes());
+                try {
+                    mainActivity.client.publish(Constants.PUBLISH_TOPIC_FINLUX, message);
+                } catch (MqttException e) {
+                    e.printStackTrace();
                 }
             }
         });
@@ -145,15 +126,11 @@ public class TabFragmentTvF extends Fragment {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                String message = Constants.FINLUX_MUTE_BUTTON;
-                if (!message.isEmpty()) {
-                    try {
-                        mainActivity.pahoMqttClient.publishMessage(mainActivity.client, message, 1, Constants.PUBLISH_TOPIC_FINLUX);
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
+                MqttMessage message = new MqttMessage(Constants.FINLUX_MUTE_BUTTON.getBytes());
+                try {
+                    mainActivity.client.publish(Constants.PUBLISH_TOPIC_FINLUX, message);
+                } catch (MqttException e) {
+                    e.printStackTrace();
                 }
             }
         });
@@ -162,34 +139,25 @@ public class TabFragmentTvF extends Fragment {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                String message = Constants.FINLUX_INPUT_BUTTON;
-                if (!message.isEmpty()) {
-                    try {
-                        mainActivity.pahoMqttClient.publishMessage(mainActivity.client, message, 1, Constants.PUBLISH_TOPIC_FINLUX);
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
+                MqttMessage message = new MqttMessage(Constants.FINLUX_INPUT_BUTTON.getBytes());
+                try {
+                    mainActivity.client.publish(Constants.PUBLISH_TOPIC_FINLUX, message);
+                } catch (MqttException e) {
+                    e.printStackTrace();
                 }
             }
         });
-
 
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                String message = Constants.FINLUX_BACK_BUTTON;
-                if (!message.isEmpty()) {
-                    try {
-                        mainActivity.pahoMqttClient.publishMessage(mainActivity.client, message, 1, Constants.PUBLISH_TOPIC_FINLUX);
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
+                MqttMessage message = new MqttMessage(Constants.FINLUX_BACK_BUTTON.getBytes());
+                try {
+                    mainActivity.client.publish(Constants.PUBLISH_TOPIC_FINLUX, message);
+                } catch (MqttException e) {
+                    e.printStackTrace();
                 }
             }
         });
@@ -198,15 +166,11 @@ public class TabFragmentTvF extends Fragment {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                String message = Constants.FINLUX_EXIT_BUTTON;
-                if (!message.isEmpty()) {
-                    try {
-                        mainActivity.pahoMqttClient.publishMessage(mainActivity.client, message, 1, Constants.PUBLISH_TOPIC_FINLUX);
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
+                MqttMessage message = new MqttMessage(Constants.FINLUX_EXIT_BUTTON.getBytes());
+                try {
+                    mainActivity.client.publish(Constants.PUBLISH_TOPIC_FINLUX, message);
+                } catch (MqttException e) {
+                    e.printStackTrace();
                 }
             }
         });
@@ -215,15 +179,11 @@ public class TabFragmentTvF extends Fragment {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                String message = Constants.FINLUX_OK_BUTTON;
-                if (!message.isEmpty()) {
-                    try {
-                        mainActivity.pahoMqttClient.publishMessage(mainActivity.client, message, 1, Constants.PUBLISH_TOPIC_FINLUX);
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
+                MqttMessage message = new MqttMessage(Constants.FINLUX_OK_BUTTON.getBytes());
+                try {
+                    mainActivity.client.publish(Constants.PUBLISH_TOPIC_FINLUX, message);
+                } catch (MqttException e) {
+                    e.printStackTrace();
                 }
             }
         });
@@ -232,15 +192,11 @@ public class TabFragmentTvF extends Fragment {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                String message = Constants.FINLUX_UP_BUTTON;
-                if (!message.isEmpty()) {
-                    try {
-                        mainActivity.pahoMqttClient.publishMessage(mainActivity.client, message, 1, Constants.PUBLISH_TOPIC_FINLUX);
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
+                MqttMessage message = new MqttMessage(Constants.FINLUX_UP_BUTTON.getBytes());
+                try {
+                    mainActivity.client.publish(Constants.PUBLISH_TOPIC_FINLUX, message);
+                } catch (MqttException e) {
+                    e.printStackTrace();
                 }
             }
         });
@@ -249,15 +205,11 @@ public class TabFragmentTvF extends Fragment {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                String message = Constants.FINLUX_DOWN_BUTTON;
-                if (!message.isEmpty()) {
-                    try {
-                        mainActivity.pahoMqttClient.publishMessage(mainActivity.client, message, 1, Constants.PUBLISH_TOPIC_FINLUX);
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
+                MqttMessage message = new MqttMessage(Constants.FINLUX_DOWN_BUTTON.getBytes());
+                try {
+                    mainActivity.client.publish(Constants.PUBLISH_TOPIC_FINLUX, message);
+                } catch (MqttException e) {
+                    e.printStackTrace();
                 }
             }
         });
@@ -266,15 +218,11 @@ public class TabFragmentTvF extends Fragment {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                String message = Constants.FINLUX_LEFT_BUTTON;
-                if (!message.isEmpty()) {
-                    try {
-                        mainActivity.pahoMqttClient.publishMessage(mainActivity.client, message, 1, Constants.PUBLISH_TOPIC_FINLUX);
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
+                MqttMessage message = new MqttMessage(Constants.FINLUX_LEFT_BUTTON.getBytes());
+                try {
+                    mainActivity.client.publish(Constants.PUBLISH_TOPIC_FINLUX, message);
+                } catch (MqttException e) {
+                    e.printStackTrace();
                 }
             }
         });
@@ -283,15 +231,11 @@ public class TabFragmentTvF extends Fragment {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                String message = Constants.FINLUX_RIGHT_BUTTON;
-                if (!message.isEmpty()) {
-                    try {
-                        mainActivity.pahoMqttClient.publishMessage(mainActivity.client, message, 1, Constants.PUBLISH_TOPIC_FINLUX);
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
+                MqttMessage message = new MqttMessage(Constants.FINLUX_RIGHT_BUTTON.getBytes());
+                try {
+                    mainActivity.client.publish(Constants.PUBLISH_TOPIC_FINLUX, message);
+                } catch (MqttException e) {
+                    e.printStackTrace();
                 }
             }
         });

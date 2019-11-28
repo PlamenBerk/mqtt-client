@@ -7,9 +7,39 @@ public class Constants {
 
     public static final String PUBLISH_TOPIC_FINLUX = "lirc/home/tv/finlux";
 
+    public static final String PUBLISH_TOPIC_SAMSUNG = "lirc/home/tv/samsung";
+
     public static final String CLIENT_ID = "androidkt";
 
     public static final String A1_POWER_BUTTON = "KEY_POWER";
+
+    public static final String SAMSUNG_SETTINGS_BUTTON = "";
+
+    public static final String SAMSUNG_POWER_BUTTON = "";
+
+    public static final String SAMSUNG_CHANNEL_UP_BUTTON = "";
+
+    public static final String SAMSUNG_VOLUME_UP_BUTTON = "";
+
+    public static final String SAMSUNG_CHANNEL_DOWN_BUTTON = "";
+
+    public static final String SAMSUNG_VOLUME_DOWN_BUTTON = "";
+
+    public static final String SAMSUNG_HOME_BUTTON = "";
+
+    public static final String SAMSUNG_BACK_BUTTON = "";
+
+    public static final String SAMSUNG_EXIT_BUTTON = "";
+
+    public static final String SAMSUNG_OK_BUTTON = "";
+
+    public static final String SAMSUNG_UP_BUTTON = "";
+
+    public static final String SAMSUNG_DOWN_BUTTON = "";
+
+    public static final String SAMSUNG_LEFT_BUTTON = "";
+
+    public static final String SAMSUNG_RIGHT_BUTTON = "";
 
     public static final String FINLUX_POWER_BUTTON = "KEY_POWER2";
 
@@ -31,11 +61,15 @@ public class Constants {
 
     public static final String A1_MUTE_BUTTON = "KEY_MUTE";
 
+    public static final String SAMSUNG_MUTE_BUTTON = "";
+
     public static final String FINLUX_MUTE_BUTTON = "KEY_MOVE";
 
     public static final String A1_HOME_BUTTON = "KEY_MENU";
 
     public static final String FINLUX_INPUT_BUTTON = "KEY_I";
+
+    public static final String SAMSUNG_INPUT_BUTTON = "";
 
     public static final String A1_BACKWARD_BUTTON = "KEY_UNKNOWN";
 

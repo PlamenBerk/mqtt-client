@@ -1,15 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"--><!--android:id="@+id/ScrollView01"--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent"--><!--android:fillViewport="true"--><!--android:scrollbars="none">-->
+
+<!--<LinearLayout--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent">-->
+
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    android:scaleType="fitCenter">
 
-    <TextView
-        android:id="@+id/textView"
+    <ImageButton
+        android:id="@+id/samsung_button_power"
+        android:layout_width="@dimen/power_button_width"
+        android:layout_height="@dimen/power_button_height"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/custom_power_button"
+        android:src="@drawable/ic_power_png" />
+
+    <ImageButton
+        android:id="@+id/samsung_button_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Tab 1"
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
+        android:layout_below="@+id/samsung_button_power"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="50dp"
+        android:background="@drawable/custom_default_up_button"
+        android:src="@drawable/cable" />
 
-</RelativeLayout>
+    <ImageButton
+        android:id="@+id/samsung_button_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/samsung_button_power"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/custom_default_up_button"
+        android:src="@drawable/settings" />
+
+    <ImageButton
+        android:id="@+id/samsung_button_mute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/samsung_button_power"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/custom_default_up_button"
+        android:src="@drawable/mute_png" />
+
+    <ImageButton
+        android:id="@+id/samsung_button_volume_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/finlux_button_mute"
+        android:layout_below="@+id/samsung_button_input"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/custom_default_up_button"
+        android:src="@drawable/ic_volume_up_png" />
+
+    <ImageButton
+        android:id="@+id/samsung_button_volume_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/samsung_button_volume_up"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_default_up_button"
+        android:src="@drawable/ic_volume_down_png" />
+
+    <ImageButton
+        android:id="@+id/samsung_button_channel_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/samsung_button_settings"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/custom_default_up_button"
+        android:src="@drawable/up_triangle_png" />
+
+    <ImageButton
+        android:id="@+id/samsung_button_channel_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/samsung_button_channel_up"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_default_up_button"
+        android:src="@drawable/down_triangle_png" />
+
+    <ImageButton
+        android:id="@+id/samsung_button_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/samsung_button_mute"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/custom_default_up_button"
+        android:src="@drawable/ic_home_png" />
+
+    <ImageButton
+        android:id="@+id/samsung_button_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/samsung_button_power"
+        android:layout_below="@+id/samsung_button_volume_down"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="90dp"
+        android:background="@drawable/custom_default_up_button"
+        android:src="@drawable/back" />
+
+    <ImageButton
+        android:id="@+id/samsung_button_exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/samsung_button_power"
+        android:layout_below="@+id/samsung_button_channel_down"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="90dp"
+        android:background="@drawable/custom_default_up_button"
+        android:src="@drawable/exit" />
+
+    <ImageButton
+        android:id="@+id/samsung_button_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/samsung_button_home"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/custom_default_up_button"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ok" />
+
+    <ImageButton
+        android:id="@+id/samsung_button_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/samsung_button_home"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="130dp"
+        android:background="@drawable/custom_default_up_button"
+        android:src="@drawable/up" />
+
+    <ImageButton
+        android:id="@+id/samsung_button_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/samsung_button_ok"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/custom_default_up_button"
+        android:src="@drawable/down" />
+
+    <ImageButton
+        android:id="@+id/samsung_button_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/samsung_button_up"
+        android:layout_toLeftOf="@+id/samsung_button_ok"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/custom_default_up_button"
+        android:src="@drawable/left" />
+
+    <ImageButton
+        android:id="@+id/samsung_button_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/samsung_button_up"
+        android:layout_toRightOf="@+id/samsung_button_ok"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/custom_default_up_button"
+        android:src="@drawable/right" />
+
+</RelativeLayout><!--</LinearLayout>--><!--</ScrollView>-->
